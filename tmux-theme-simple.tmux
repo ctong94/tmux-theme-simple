@@ -40,6 +40,8 @@ set "status-left-length" "100"
 set "status-right-length" "100"
 set "status-right-attr" "none"
 
+set "status-position" "top"
+
 set "message-fg" "$simple_white"
 set "message-bg" "$simple_black"
 
