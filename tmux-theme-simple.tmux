@@ -40,8 +40,6 @@ set "status-left-length" "100"
 set "status-right-length" "100"
 set "status-right-attr" "none"
 
-set "status-position" "top"
-
 set "message-fg" "$simple_white"
 set "message-bg" "$simple_black"
 
@@ -78,14 +76,14 @@ set "status-fg" "$simple_white"
 set "@prefix_highlight_fg" "$simple_black"
 set "@prefix_highlight_bg" "$simple_blue"
 set "@prefix_highlight_copy_mode_attr" "fg=$simple_black,bg=$simple_blue"
-set "@prefix_highlight_output_prefix" "  "
+set "@prefix_highlight_output_prefix" "  "
 
 status_widgets=$(get "@simple_widgets")
 time_format=$(get "@simple_time_format" "%R")
 date_format=$(get "@simple_date_format" "%d/%m/%Y")
 
-set "status-right" "#[fg=$simple_white,bg=$simple_black,nounderscore,noitalics]${time_format}  ${date_format} #[fg=$simple_visual_grey,bg=$simple_black]#[fg=$simple_visual_grey,bg=$simple_visual_grey]#[fg=$simple_white, bg=$simple_visual_grey]${status_widgets} #[fg=$simple_blue,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_black,bg=$simple_blue,bold] #h #[fg=$simple_yellow, bg=$simple_blue]#[fg=$simple_red,bg=$simple_yellow]"
-set "status-left" "#[fg=$simple_black,bg=$simple_blue,bold] #S #{prefix_highlight}#[fg=$simple_blue,bg=$simple_black,nobold,nounderscore,noitalics]"
+set "status-right" "#[fg=$simple_white,bg=$simple_black,nounderscore,noitalics]${time_format}  ${date_format} #[fg=$simple_visual_grey,bg=$simple_black]#[fg=$simple_visual_grey,bg=$simple_visual_grey]#[fg=$simple_white, bg=$simple_visual_grey]${status_widgets} #[fg=$simple_blue,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_black,bg=$simple_blue,bold] #h #[fg=$simple_yellow, bg=$simple_blue]#[fg=$simple_red,bg=$simple_yellow]"
+set "status-left" "#[fg=$simple_black,bg=$simple_blue,bold] #S #{prefix_highlight}#[fg=$simple_blue,bg=$simple_black,nobold,nounderscore,noitalics]"
 
-set "window-status-format" "#[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_black] #I  #W #[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]"
-set "window-status-current-format" "#[fg=$simple_black,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_visual_grey,nobold] #I  #W #[fg=$simple_visual_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
+set "window-status-format" "#[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_black] #I  #W #[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]"
+set "window-status-current-format" "#[fg=$simple_black,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_visual_grey,nobold] #I  #W #[fg=$simple_visual_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
