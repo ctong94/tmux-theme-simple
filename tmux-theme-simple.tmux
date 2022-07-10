@@ -1,14 +1,14 @@
 #!/bin/bash
 
-simple_black="#282c34"
+simple_black="#32302f"
 simple_blue="#719cd6"
 simple_yellow="#e5c07b"
 simple_red="#e06c75"
 simple_white="#aab2bf"
 simple_green="#98c379"
-simple_visual_grey="#3e4452"
-simple_comment_grey="#5c6370"
-simple_material_grey="#37474f"
+simple_visual_grey="#34515e"
+simple_comment_grey="#34515e"
+simple_material_grey="#29434e"
 
 get() {
    local option=$1
@@ -88,4 +88,4 @@ set "status-right" "#[fg=$simple_white,bg=$simple_black,nounderscore,noitalics]$
 set "status-left" "#[fg=$simple_white,bg=$simple_material_grey,bold] #S #{prefix_highlight}#[fg=$simple_material_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
 
 set "window-status-format" "#[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_black] #I  #W #[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]"
-set "window-status-current-format" "#[fg=$simple_black,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_visual_grey,nobold] #I  #W #[fg=$simple_visual_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
+set "window-status-current-format" "#[fg=$simple_black,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_visual_grey,nobold] #I  #W#F #[fg=$simple_visual_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
