@@ -5,22 +5,9 @@ simple_blue="#719cd6"
 simple_yellow="#e5c07b"
 simple_red="#e06c75"
 simple_white="#aab2bf"
-simple_green="#98c379"
-simple_visual_grey="#34515e"
-simple_comment_grey="#34515e"
-simple_material_grey="#29434e"
-
-get() {
-   local option=$1
-   local default_value=$2
-   local option_value="$(tmux show-option -gqv "$option")"
-
-   if [ -z "$option_value" ]; then
-      echo "$default_value"
-   else
-      echo "$option_value"
-   fi
-}
+simple_light_green="#6abf69"
+simple_green="#255d00"
+simple_grey="#373737"
 
 set() {
    local option=$1
@@ -60,7 +47,7 @@ setw "window-status-activity-attr" "none"
 
 setw "window-status-separator" ""
 
-set "window-style" "fg=$simple_comment_grey"
+set "window-style" "fg=$simple_grey"
 set "window-active-style" "fg=$simple_white"
 
 set "pane-border-fg" "$simple_white"
@@ -71,19 +58,11 @@ set "pane-active-border-bg" "$simple_black"
 set "display-panes-active-colour" "$simple_yellow"
 set "display-panes-colour" "$simple_green"
 
-set "status-bg" "$simple_black"
+set "status-bg" "$simple_green"
 set "status-fg" "$simple_white"
 
-set "@prefix_highlight_fg" "$simple_black"
-set "@prefix_highlight_bg" "$simple_blue"
-set "@prefix_highlight_copy_mode_attr" "fg=$simple_black,bg=$simple_blue"
-set "@prefix_highlight_output_prefix" "  "
+set "status-right" "#[fg=$simple_black,bg=$simple_light_green,bold] #h "
+set "status-left"  "#[fg=$simple_black,bg=$simple_light_green,bold] #S #[fg=$simple_white,bg=$simple_green,bold] "
 
-time_format=$(get "@simple_time_format" "%R")
-date_format=$(get "@simple_date_format" "%d/%m/%Y")
-
-set "status-right" "#[fg=$simple_white,bg=$simple_black,nounderscore,noitalics]${time_format}  ${date_format} #[fg=$simple_material_grey,bg=$simple_black,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_material_grey,bold] #h "
-set "status-left" "#[fg=$simple_white,bg=$simple_material_grey,bold] #S #{prefix_highlight}#[fg=$simple_material_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
-
-set "window-status-format" "#[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_black] #I  #W #[fg=$simple_black,bg=$simple_black,nobold,nounderscore,noitalics]"
-set "window-status-current-format" "#[fg=$simple_black,bg=$simple_visual_grey,nobold,nounderscore,noitalics]#[fg=$simple_white,bg=$simple_visual_grey,nobold] #I  #W#F #[fg=$simple_visual_grey,bg=$simple_black,nobold,nounderscore,noitalics]"
+set "window-status-format"         "#[fg=$simple_white,bg=$simple_green] #I: #W#F "
+set "window-status-current-format" "#[fg=$simple_black,bg=$simple_light_green] #I: #W#F "
